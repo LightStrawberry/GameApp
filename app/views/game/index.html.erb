@@ -1,10 +1,17 @@
-<h1>Game</h1>
+<%= javascript_include_tag params[:game] %>
+<%= stylesheet_link_tag params[:game] %>
+
+<div class="container">
+
+<h1>魔法之风 沉睡的人</h1>
  
-<table>
+<table id="game">
   <tr>
     <th>游戏</th>
     <th>游戏详情</th>
     <th>平台</th>
+    <th></th>
+    <th></th>
   </tr>
  
   <% @games.each do |game| %>
@@ -20,3 +27,16 @@
 </table>
 
 <%= link_to 'new game', new_game_path %>
+
+<div class="row">
+  <% @games.each do |game| %>
+  <div class="col-md-4 game-info">
+  	<a>游戏:<%= game.name %></a><br>
+  	<a>游戏简介:<%= game.game_info %></a><br>
+  	<a>平台:<%= game.platform %></a><br>
+  	<a><%= game.game_publisher %></a><br>
+  </div>
+  <% end %>
+</div>
+
+</div>

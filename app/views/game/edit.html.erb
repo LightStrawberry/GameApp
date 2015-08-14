@@ -1,0 +1,30 @@
+<h1>edit Game</h1>
+<%= form_for @game, url: {action: "update"}, html: {class: "nifty_form"} do |g| %>
+  <p>
+    <%= g.label :name %><br>
+    <%= g.text_field :name %>
+  </p>
+
+  <p>
+    <%= g.label :image %><br>
+    <%= g.text_field :image %>
+  </p>
+
+  <p>
+    <%= g.label :platform %><br>
+    <%= g.text_field :platform %>
+  </p>
+ 
+  <p>
+    <%= g.label :game_info %><br>
+    <%= g.text_area :game_info %>
+  </p>
+ 
+  <p>
+    <%= g.submit "update" %>
+  </p>
+
+  <%= link_to 'Destroy', game_path(@game),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+<% end %>

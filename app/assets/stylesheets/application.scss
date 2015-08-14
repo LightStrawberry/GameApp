@@ -1,0 +1,38 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap.min
+ */
+
+.container {
+	margin: auto auto;
+	text-align: center;
+	background-image: url(http://a.hiphotos.baidu.com/super/crop=0,0,1920,1200/sign=8dc85b5b9c25bc313f125bd863efa181/3b87e950352ac65cb005e8e6fef2b21193138a27.jpg);
+    background-repeat: no-repeat, repeat;
+}
+
+
+#game {
+	border:5px solid red;
+	margin: auto auto;
+}
+
+#game tr td {
+	border:2px solid black;
+}
+
+.game-info {
+	height: 250px;
+	border:2px solid black;
+}
