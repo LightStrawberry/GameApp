@@ -14,12 +14,15 @@
  *= require_self
  *= require bootstrap.min
  */
+body {
+	background-image: url(bg.jpg);
+	background-repeat: repeat , no-repeat;
+	padding-top: 70px;
+}
 
 .container {
 	margin: auto auto;
 	text-align: center;
-	background-image: url(http://a.hiphotos.baidu.com/super/crop=0,0,1920,1200/sign=8dc85b5b9c25bc313f125bd863efa181/3b87e950352ac65cb005e8e6fef2b21193138a27.jpg);
-    background-repeat: no-repeat, repeat;
 }
 
 
@@ -35,4 +38,24 @@
 .game-info {
 	height: 250px;
 	border:2px solid black;
+	border-radius: 15px;
+}
+
+.game-info a {
+	color: red;
+}
+
+.game-title {
+	font-size: 30px;
+	display: block;
+	text-decoration: none;
+}
+
+.game-banner {
+	display: block;
+	text-decoration: none;
+}
+
+.game-info a:hover {
+	text-decoration: none;
 }
