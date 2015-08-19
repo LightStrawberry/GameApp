@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,6 +11,13 @@ Rails.application.routes.draw do
   #post '/new' => 'game#create'
 
   resources :game
+
+  resources :users, only: [:create]
+  get "signup" => "users#signup", :as => "signup"
+  get "login" => "users#login", :as => "login"
+  post "create_login_session" => "users#create_login_session"
+  delete "logout" => "users#logout", :as => "logout"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
