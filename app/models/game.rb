@@ -1,4 +1,5 @@
 class Game < ActiveRecord::Base
+	has_many :comments
 	def create
 		@game = Game.new(game_params)
 	 

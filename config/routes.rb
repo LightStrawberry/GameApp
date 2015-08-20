@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "login" => "users#login", :as => "login"
   post "create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
+  post '/game/:game_id/comments' => "comments#create"
+  resources :comments, only: [:create]
 
 
   # Example of regular route:

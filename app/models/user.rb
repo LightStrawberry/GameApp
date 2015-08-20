@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :comments
 
 	validates :name, :email, presence: true
 	validates :name, :email, uniqueness: { case_sensitive: false }
@@ -10,5 +11,10 @@ class User < ActiveRecord::Base
 	  begin
 	    self[column] = SecureRandom.urlsafe_base64
 	  end while User.exists?(column => self[column])
+	end
+
+	def avatar
+	  gravatar_id = Digest::MD5.hexdigest(self.email.downcase) if self.email
+	  "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=retro"
 	end
 end

@@ -9,3 +9,7 @@
 </p>
 
 <%= link_to 'back', game_index_path %>
+
+<%= render partial: 'shared/comment_list', locals: {comments: @comments} %>
+
+<%= render partial: 'shared/comment_box', locals: {game: @game} %>
