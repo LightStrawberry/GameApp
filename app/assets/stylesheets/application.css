@@ -40,6 +40,7 @@
 	height: 250px;
 	border:2px solid black;
 	border-radius: 15px;
+	margin: 15px auto;
 }
 
 .game-info a {
@@ -73,5 +74,14 @@
     padding: 13px;
     margin-top: 15px;
     width: 100%;
+  }
+}
+
+.remember-me {
+  * {
+    width: auto;
+  }
+  #remember_me {
+    margin-left: 0;
   }
 }
