@@ -1,6 +1,9 @@
+<% if current_user %>
 <%= form_for(Comment.new(:game_id => game.id, :user_id => current_user.id), remote: true) do |f| %>
   <%= f.hidden_field :game_id %>
   <%= f.hidden_field :user_id  %>
   <%= f.text_area :content %>
   <%= submit_tag '提交评论', class: 'btn btn-primary btn-submit' %>
+<% end %>
+<% else %>
 <% end %>
