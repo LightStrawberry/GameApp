@@ -43,6 +43,11 @@
 	margin: 15px auto;
 }
 
+.game-info:hover {
+	background-color: yellow;
+	cursor: pointer;
+}
+
 .game-info a {
 	color: red;
 }

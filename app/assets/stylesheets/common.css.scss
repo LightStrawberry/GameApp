@@ -75,3 +75,16 @@ form {
   -moz-box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
   box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
 }
+
+.avatar {
+  float: left;
+}
+
+.comment-body {
+  float: left;
+}
+
+.image-circle {
+  height: 50px;
+  width: 50px;
+}

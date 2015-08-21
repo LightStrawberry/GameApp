@@ -1,15 +1,17 @@
+<div class="container">
 <p>
   <strong>name:</strong>
   <%= @game.name %>
 </p>
- 
 <p>
   <strong>game_info:</strong>
   <%= @game.game_info %>
 </p>
-
 <%= link_to 'back', game_index_path %>
-
-<%= render partial: 'shared/comment_list', locals: {comments: @comments} %>
-
+<div class="replies">
+<% @comments.each do |c| %>
+  <%= render partial: 'shared/comment', locals: {c: c} %>
+<% end %>
+</div>
 <%= render partial: 'shared/comment_box', locals: {game: @game} %>
+</div>
