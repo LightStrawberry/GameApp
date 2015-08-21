@@ -37,8 +37,8 @@
 }
 
 .game-info {
-	height: 250px;
-	border:2px solid black;
+	height: 300px;
+	border:2px initial;
 	border-radius: 15px;
 	margin: 15px auto;
 }

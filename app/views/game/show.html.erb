@@ -1,5 +1,5 @@
 <div class="container">
-<%= image_tag @game.image %>
+<%= image_tag(@game.image(:normal)) %>
 <p>
   <strong>name:</strong>
   <%= @game.name %>
@@ -9,6 +9,10 @@
   <%= @game.game_info %>
 </p>
 <%= link_to 'back', game_index_path %>
+
+<% if current_user %>
+<%= link_to 'delete', game_path, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
 <div class="replies">
 <% @comments.each do |c| %>
   <%= render partial: 'shared/comment', locals: {c: c} %>

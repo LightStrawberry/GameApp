@@ -1,7 +1,7 @@
 <div class="container">
 
 <h1>魔法之风 沉睡的人</h1>
- 
+<% if current_user %>
 <table id="game">
   <tr>
     <th>游戏</th>
@@ -10,7 +10,7 @@
     <th></th>
     <th></th>
   </tr>
- 
+
   <% @games.each do |game| %>
     <tr>
       <td><%= game.name %></td>
@@ -20,14 +20,14 @@
       <td><%= link_to 'edit', edit_game_path(game) %></rd>
     </tr>
   <% end %>
-
 </table>
 
 <%= link_to 'new game', new_game_path %>
+<% end %>
 
 <div class="row">
   <% @games.each do |game| %>
-	<div class="col-md-12 game-info" onclick="window.location='<%= game_path(game) %>';">
+	<div class="col-md-12 game-info" onclick="window.location='<%= game_path(game) %>';" style="background-image: url(<%= game.image(:title) %>);">
 		<a class="game-title"><%= game.name %></a><br>
 		<a>游戏简介:<%= game.game_info %></a><br>
 		<a>平台:<%= game.platform %></a><br>
