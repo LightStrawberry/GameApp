@@ -15,7 +15,10 @@
         <% if @user.errors[:email].any? %>
           <dd class="error"><%= @user.errors[:email][0] %></dd>
         <% end %>
-        <%= f.file_field :avatar %>
+        <%= f.hidden_field :avatar_file_name, :value=> "ico.jpg" %>
+        <%= f.hidden_field :avatar_file_size, :value=> "NULL" %>
+        <%= f.hidden_field :avatar_content_type, :value=> "image/jpeg" %>
+        <%= f.hidden_field :avatar_updated_at, :value=> "NULL" %>
         <dl class="form">
           <dt><%= f.label :password, "密码" %></dt>
           <dd><%= f.password_field :password %></dd>
