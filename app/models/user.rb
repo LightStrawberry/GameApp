@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 			:normal => "120x120#",
 	        :small => "60x60#",
 			},                  
-        :url  => '/avatars/:id/:style/:basename.:extension',  
-        :path => ':rails_root/public/avatars/:id/:style/:basename.:extension'
+        :url  => '/avatars/:style/:basename.:extension',  
+        :path => ':rails_root/public/avatars/:style/:basename.:extension'
         validates_attachment_presence :avatar  
 	    validates_attachment_size :avatar, :less_than => 5.megabytes  
 	    validates_attachment_content_type :avatar, :content_type => %w(image/jpeg image/png)
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 	validates :name, :email, uniqueness: { case_sensitive: false }
 
 	has_secure_password
-	
+
 	before_create { generate_token(:auth_token) }
 
 	def generate_token(column)
