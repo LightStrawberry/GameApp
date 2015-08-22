@@ -88,3 +88,19 @@ form {
   height: 50px;
   width: 50px;
 }
+
+.add-news {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background: rgb(255,15,79);
+  position: fixed;
+  left: 50%;
+  margin-left: 500px;
+  line-height: 50px;
+  text-align: center;
+  bottom: 10%;
+  z-index: 998;
+  cursor: pointer;
+}

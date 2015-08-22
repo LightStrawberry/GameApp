@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   post '/game/:game_id/comments' => "comments#create"
   resources :comments, only: [:create]
 
+  get "admin_user" => "admin#user", :as => "admin_user"
+  get "admin_game" => "admin#game", :as => "admin_game"
+
 
 
   # Example of regular route:

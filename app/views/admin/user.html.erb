@@ -1,0 +1,19 @@
+<table id="game">
+  <tr>
+    <th>user</th>
+    <th>email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @users.each do |f| %>
+    <tr>
+      <td><%= f.name %></td>
+      <td><%= f.email %></td>
+      <td><%= link_to 'show', user_path(f.id) %></td>
+      <td><%= link_to 'edit', edit_game_path(f.id) %></td>
+      <td><%= link_to 'delete', user_path(f.id), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
