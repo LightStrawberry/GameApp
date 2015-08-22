@@ -44,8 +44,7 @@
 }
 
 .game-info:hover {
-	background-color: yellow;
-	cursor: hand;
+	cursor: pointer;
 }
 
 .game-info a {

@@ -1,0 +1,22 @@
+<div class="container">
+	<h1>EDIT USER</h1>
+	<%= form_for @user, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
+		<p>
+		 	<strong>name:</strong>
+		 	<%= @user.name %>
+		</p>
+
+		<p>
+		    <%= f.label :email %><br>
+		    <%= f.text_field :email %>
+		</p>
+
+		<%= f.file_field :avatar %>  
+	 
+	    <p>
+	    	<%= f.submit "update" %>
+	    </p>
+	<% end %>
+
+	<%= link_to 'back', user_path %>
+</div>

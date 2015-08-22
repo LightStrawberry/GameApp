@@ -1,0 +1,14 @@
+<div class="container">
+<%= image_tag @user.avatar.url(:normal) %> 
+<p>
+  <strong>name:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>email:</strong>
+  <%= @user.email %>
+</p>
+<%= link_to 'back', root_path %>
+<%= link_to 'edit', edit_user_path %>
+
+</div>

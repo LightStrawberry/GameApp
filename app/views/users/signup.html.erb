@@ -15,6 +15,7 @@
         <% if @user.errors[:email].any? %>
           <dd class="error"><%= @user.errors[:email][0] %></dd>
         <% end %>
+        <%= f.file_field :avatar %>
         <dl class="form">
           <dt><%= f.label :password, "密码" %></dt>
           <dd><%= f.password_field :password %></dd>

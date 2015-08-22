@@ -16,16 +16,5 @@ class Game < ActiveRecord::Base
 	    validates_attachment_content_type :image, :content_type => %w(image/jpeg image/png)
 
 	has_many :comments, dependent: :destroy
-
-	def create
-		@game = Game.new(game_params)
-	 
-		@game.save
-		redirect_to @game
-	end
-
-	private
-		def game_params
-			params.require(:game).permit(:name, :game_info, :platform)
-		end
+	belongs_to :user
 end
