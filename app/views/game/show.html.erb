@@ -1,14 +1,20 @@
-<div class="container">
-<%= image_tag(@game.image(:normal)) %>
-<p>
-  <strong>name:</strong>
-  <%= @game.name %>
-</p>
-<p>
-  <strong>game_info:</strong>
-  <%= @game.game_info %>
-</p>
+<div class="game-show" style="background-image: url(<%= @game.image(:original) %>);">
+	<div class="intro-body">
+		<div class="container">
+			<div class="row">
+				<div class="game-panel col-md-8 col-md-offset-2">
+					<h1 class="brand-heading"><%= @game.name %></h1>
+					<p class="game-text"><%= @game.game_info %></p>
+					<a href="#about" class="btn btn-circle page-scroll">
+					<i class="fa fa-angle-double-down animated"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
+<div class="container">
 <% if current_user && current_user == @game.user %>
 	<%= link_to 'edit', edit_game_path %>
 	<%= link_to 'Destroy', game_path(@game), method: :delete, data: { confirm: 'Are you sure?' } %>
