@@ -36,7 +36,18 @@
   </div>
 </nav>
 
+<% if flash.notice %>
+  <div class="notice"><%= flash.notice %></div>
+<% end %>
+
 <%= yield %>
+
+<script>
+  var hideNotice = function(){
+    $(".notice").fadeOut("slow");
+  }
+  setTimeout(hideNotice, 2000);
+</script>
 
 </body>
 </html>

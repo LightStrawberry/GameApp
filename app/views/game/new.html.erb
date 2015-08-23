@@ -1,6 +1,6 @@
 <div class="container">
   <h1>New Game</h1>
-  <%= form_for @game, url: {action: "create"}, html: {class: "nifty_form"} do |g| %>
+  <%= form_for (Game.new(user_id: current_user.id)), url: {action: "create"}, html: {class: "nifty_form"} do |g| %>
     <p>
       <%= g.label :name %><br>
       <%= g.text_field :name %>
@@ -12,7 +12,7 @@
       <%= g.label :platform %><br>
       <%= g.text_field :platform %>
     </p>
-   
+    <%= g.hidden_field :user_id %>
     <p>
       <%= g.label :game_info %><br>
       <%= g.text_area :game_info %>

@@ -10,13 +10,19 @@
 </p>
 <%= link_to 'back', game_index_path %>
 
-<% if current_user %>
-<%= link_to 'delete', game_path, :confirm => 'Are you sure?', :method => :delete %>
+<% if current_user && current_user == @game.user %>
+	<%= link_to 'edit', edit_game_path %>
+	<%= link_to 'Destroy', game_path(@game), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 <div class="replies">
 <% @comments.each do |c| %>
   <%= render partial: 'shared/comment', locals: {c: c} %>
 <% end %>
 </div>
-<%= render partial: 'shared/comment_box', locals: {game: @game} %>
+
+<% if current_user %>
+	<%= render partial: 'shared/comment_box', locals: {game: @game} %>
+<% else %>
+	<%= link_to "登录发评论", login_path %>
+<% end %>
 </div>
