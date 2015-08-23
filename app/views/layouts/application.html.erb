@@ -8,20 +8,22 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
   <div class="container">
     <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "主页", root_path %></li>
-        <li><%= link_to "游戏", root_path %></li>
-        <li><%= link_to "关于", root_path %></li>
-        <% if current_user %>
-    		  <li><%= link_to current_user.name, user_path(current_user.id) %></li>
-    		  <li><%= link_to "登出", logout_path, method: "delete" %></li>
-    		<% else %>
-    		  <li><%= link_to "登录", login_path %></li>
-    		  <li><%= link_to "注册", signup_path %></li>
-    		<% end %>
-      </ul>
+      <li><%= link_to "主页", root_path %></li>
+      <li><%= link_to "游戏", root_path %></li>
+      <li><%= link_to "关于", root_path %></li>
+    </ul>
+    <ul class="nav navbar-nav" style="float:right;">
+      <% if current_user %>
+        <li><%= link_to current_user.name, user_path(current_user.id) %></li>
+        <li><%= link_to "登出", logout_path, method: "delete" %></li>
+      <% else %>
+        <li><%= link_to "登录", login_path %></li>
+        <li><%= link_to "注册", signup_path %></li>
+      <% end %>
+    <ul>
   </div>
 </nav>
 

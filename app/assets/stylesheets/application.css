@@ -28,7 +28,6 @@
 	text-align: center;
 }
 
-
 #game {
 	border:5px solid red;
 	margin: auto auto;
@@ -43,7 +42,7 @@
 	height: 300px;
 	border:2px initial;
 	border-radius: 15px;
-	margin: 20px auto;
+	margin: 0px auto 40px auto;
 	float: center;
 	background-size: cover;
 }

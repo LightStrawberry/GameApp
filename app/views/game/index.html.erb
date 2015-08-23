@@ -9,7 +9,7 @@
 
 <div class="row">
   <% @games.each do |game| %>
-	<div class="game-info" onclick="window.location='<%= game_path(game) %>';" style="background-image: url(<%= game.image(:original) %>);">
+	<div class="game-info" onclick="window.open('<%= game_path(game) %>', '_blank');" style="background-image: url(<%= game.image(:original) %>);">
 		<a class="game-title"><%= game.name %></a><br>
 		<a>游戏简介:<%= game.game_info %></a><br>
 		<a>平台:<%= game.platform %></a><br>
