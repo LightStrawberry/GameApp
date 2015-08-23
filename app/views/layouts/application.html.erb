@@ -12,19 +12,8 @@
   <div class="container">
     <ul class="nav navbar-nav">
         <li class="active"><%= link_to "主页", root_path %></li>
-        <li><a href="#">游戏</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">about</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+        <li><%= link_to "游戏", root_path %></li>
+        <li><%= link_to "关于", root_path %></li>
         <% if current_user %>
     		  <li><%= link_to current_user.name, user_path(current_user.id) %></li>
     		  <li><%= link_to "登出", logout_path, method: "delete" %></li>

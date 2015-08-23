@@ -8,7 +8,6 @@
   <strong>game_info:</strong>
   <%= @game.game_info %>
 </p>
-<%= link_to 'back', game_index_path %>
 
 <% if current_user && current_user == @game.user %>
 	<%= link_to 'edit', edit_game_path %>

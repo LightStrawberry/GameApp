@@ -12,12 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'font-awesome'
  */
 
 
  body {
 	background-image: url(bg.jpg);
-	background-repeat: repeat , no-repeat;
+	background-repeat: no-repeat , no-repeat;
+	background-attachment:fixed;
 	padding-top: 70px;
 }
 
@@ -37,10 +39,13 @@
 }
 
 .game-info {
+	width: 800px;
 	height: 300px;
 	border:2px initial;
 	border-radius: 15px;
-	margin: 15px auto;
+	margin: 20px auto;
+	float: center;
+	background-size: cover;
 }
 
 .game-info:hover {
