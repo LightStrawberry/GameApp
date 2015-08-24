@@ -2,9 +2,7 @@ class Game < ActiveRecord::Base
 
 	has_attached_file :image,                                                                          
 		:styles => { 
-			:title => "1170x300#",
-			:normal => "180x180#",
-	        :small => "120x120#",
+			:title => "800x300#",
 	        :s48 => "48x48#",
 			},                  
         :url  => '/images/:id/:style/:basename.:extension',  

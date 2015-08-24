@@ -2,7 +2,7 @@
 	<div class="circle-button" onclick="window.location='<%= root_path %>';">
 		<i class="fa fa-reply" style="margin-left: 1px;margin-top: 20px;"></i>
 	</div>
-	<%= image_tag @user.avatar.url(:normal)%>
+	<%= image_tag @user.avatar.url(:normal), class: "user_avatar"%>
 	<h1><%= @user.name %></h1>
 	<p><%= @user.user_info %></p>
 
