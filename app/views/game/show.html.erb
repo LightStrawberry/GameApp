@@ -14,20 +14,17 @@
 	</div>
 </div>
 
-<div class="container">
-<% if current_user && current_user == @game.user %>
-	<%= link_to 'edit', edit_game_path %>
-	<%= link_to 'Destroy', game_path(@game), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<div class="replies">
-<% @comments.each do |c| %>
-  <%= render partial: 'shared/comment', locals: {c: c} %>
-<% end %>
-</div>
-
-<% if current_user %>
+<div class="comment-body" id="about">
+	<div class="container">
+	<% if current_user && current_user == @game.user %>
+		<%= link_to 'edit', edit_game_path %>
+		<%= link_to 'Destroy', game_path(@game), method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+	<div class="replies">
+	<% @comments.each do |c| %>
+	  <%= render partial: 'shared/comment', locals: {c: c} %>
+	<% end %>
+	</div>
 	<%= render partial: 'shared/comment_box', locals: {game: @game} %>
-<% else %>
-	<%= link_to "登录发评论", login_path %>
-<% end %>
+	</div>
 </div>

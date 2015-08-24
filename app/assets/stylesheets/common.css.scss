@@ -76,14 +76,6 @@ form {
   box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
 }
 
-.avatar {
-  float: left;
-}
-
-.comment-body {
-  float: left;
-}
-
 .image-circle {
   height: 50px;
   width: 50px;
@@ -103,4 +95,64 @@ form {
   bottom: 10%;
   z-index: 998;
   cursor: pointer;
+}
+
+.comment-body {
+    width: 100%;
+    background-color: #1F2234;
+    float: left;
+    height: auto;
+}
+
+.reply {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  width: 100%;
+    .user-name {
+      font-size: 18px;
+      display: inline;
+      font-weight: normal;
+    }
+  .user-comment {
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    overflow: visible;
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid #ddd;
+    line-height: 26px;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 21px;
+      left: -6px;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-left: 1px solid #cad5e0;
+      border-top: 1px solid #cad5e0;
+      -moz-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+  }
+  .user-info {
+    float: left;
+    margin-right: 29px;
+    margin-left: 29px;
+    position: relative;
+    overflow: visible;
+    text-align: center;
+    .image-circle {
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.comment-box {
+  width: 80%;
+  margin: 10px auto; 
 }
