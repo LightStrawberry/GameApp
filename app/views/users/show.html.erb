@@ -1,27 +1,33 @@
 <div class="container">
-
-<%= image_tag @user.avatar.url(:normal)%>
-<h1><%= @user.name %></h1>
-<p><%= @user.user_info %></p>
-
-<h3>他提交过的游戏:</h3>
-<div class="">
-	<div class="row">
-		<% @game.each do |game| %>
-	 	<div class="col-md-4 game-list" onclick="window.location='<%= game_path(game) %>';">
-	 		<%= image_tag game.image(:s48), class: "game-ico" %>
-	 		<a class="game-title"><%= game.name %></a><br></a>
-	 	</div>
-	 	<% end %>
+	<div class="circle-button" onclick="window.location='<%= root_path %>';">
+		<i class="fa fa-reply" style="margin-left: 1px;margin-top: 20px;"></i>
 	</div>
-</div>
+	<%= image_tag @user.avatar.url(:normal)%>
+	<h1><%= @user.name %></h1>
+	<p><%= @user.user_info %></p>
 
-<% if current_user && current_user == @user %>
-<p><strong>邮箱:</strong><%= @user.email %></p>
-<% end %>
-
-<% if current_user && current_user == @user %>
-<button type="button" class="btn btn-default"><%= link_to '返回', root_path %></button>
-<button type="button" class="btn btn-default"><%= link_to '编辑', edit_user_path %></button>
-<% end %>
+	<div class="game-row">
+		<% if current_user && current_user == @user %>
+			<h3>我提交的游戏:</h3>
+		<% else %>
+			<h3>该用户提交的游戏:</h3>
+		<% end %>
+		<div class="row">
+			<% @game.each do |game| %>
+		 	<div class="col-md-4 game-list" onclick="window.location='<%= game_path(game) %>';">
+		 		<%= image_tag game.image(:s48), class: "game-ico" %>
+		 		<a class="user-game-title"><%= game.name %></a><br></a>
+		 		<% if current_user && current_user == @user %>
+				<a><%= link_to '编辑', edit_game_path(game) %></a>
+				<a><%= link_to '删除', game_path(game.id), method: :delete, data: { confirm: 'Are you sure?' } %><a>
+				<% end %>
+		 	</div>
+		 	<% end %>
+		</div>
+	</div>
+	<% if current_user && current_user == @user %>
+	<div class="circle-button-left" onclick="window.location='<%= edit_user_path %>';">
+		<i class="fa fa-cog" style="margin-left: 1px;margin-top: 20px;"></i>
+	</div>
+	<% end %>
 </div>

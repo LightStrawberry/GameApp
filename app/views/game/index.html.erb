@@ -1,18 +1,16 @@
 <div class="container">
-
-<h1>魔法之风 沉睡的人</h1>
-<% if current_user %>
-<div class="add-news" onclick="window.location='<%= new_game_path %>';">
-	<i class="fa fa-plus" style="margin-left: 1px;margin-top: 20px;"></i>
-</div>
-<% end %>
-
-<div class="row">
-  <% @games.each do |game| %>
-	<div class="game-info" onclick="window.open('<%= game_path(game) %>', '_blank');" style="background-image: url(<%= game.image(:original) %>);">
-		<a class="game-title"><i class="fa fa-eject"></i><%= game.name %></a>
+	<h1>魔法之风 沉睡的人</h1>
+	<% if current_user %>
+	<div class="circle-button" onclick="window.location='<%= new_game_path %>';">
+		<i class="fa fa-plus" style="margin-left: 1px;margin-top: 20px;"></i>
 	</div>
-  <% end %>
-</div>
+	<% end %>
 
+	<div class="row">
+	  <% @games.each do |game| %>
+		<div class="game-info" onclick="window.open('<%= game_path(game) %>', '_blank');" style="background-image: url(<%= game.image(:original) %>);">
+			<a class="game-title"><i class="fa fa-eject"></i><%= game.name %></a>
+		</div>
+	  <% end %>
+	</div>
 </div>

@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>EDIT USER</h1>
+	<h1>编辑用户</h1>
 	<%= form_for @user, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
 		<p><strong>name:</strong><%= @user.name %></p>
 		<p>
@@ -12,9 +12,9 @@
 		</p>
 		<%= f.file_field :avatar %>  
 	    <p>
-	    	<%= f.submit "update" %>
+	    	<%= f.submit "更新" %>
 	    </p>
 	<% end %>
 
-	<%= link_to 'back', user_path %>
+	<%= link_to '返回', user_path %>
 </div>

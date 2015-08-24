@@ -1,30 +1,25 @@
 <div class="container">
-  <h1>edit Game</h1>
+  <h1>编辑游戏</h1>
   <%= form_for @game, url: {action: "update"}, html: {class: "nifty_form"} do |g| %>
     <p>
-      <%= g.label :name %><br>
+      <%= g.label :name, "游戏名" %><br>
       <%= g.text_field :name %>
     </p>
 
-    <p>
-      <%= g.label :image %><br>
-      <%= g.text_field :image %>
-    </p>
+    <%= g.label :name, "图片" %>
+    <%= g.file_field :image %>
 
     <p>
-      <%= g.label :platform %><br>
+      <%= g.label :platform, "平台" %><br>
       <%= g.text_field :platform %>
     </p>
    
     <p>
-      <%= g.label :game_info %><br>
+      <%= g.label :game_info, "游戏介绍" %><br>
       <%= g.text_area :game_info %>
     </p>
-   
     <p>
-      <%= g.submit "update" %>
+      <%= g.submit "更新" %>
     </p>
-
-    <%= link_to 'Destroy', game_path(@game), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </div>

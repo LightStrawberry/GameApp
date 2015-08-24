@@ -16,15 +16,11 @@
 
 <div class="comment-body" id="about">
 	<div class="container">
-	<% if current_user && current_user == @game.user %>
-		<button type="button" class="btn btn-default"><%= link_to 'edit', edit_game_path %></button>
-		<button type="button" class="btn btn-default"><%= link_to 'Destroy', game_path(@game), method: :delete, data: { confirm: 'Are you sure?' } %></button>
-	<% end %>
-	<div class="replies">
-	<% @comments.each do |c| %>
-	  <%= render partial: 'shared/comment', locals: {c: c} %>
-	<% end %>
-	</div>
-	<%= render partial: 'shared/comment_box', locals: {game: @game} %>
+		<div class="replies">
+		<% @comments.each do |c| %>
+		  <%= render partial: 'shared/comment', locals: {c: c} %>
+		<% end %>
+		</div>
+		<%= render partial: 'shared/comment_box', locals: {game: @game} %>
 	</div>
 </div>

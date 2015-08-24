@@ -245,6 +245,18 @@ a:focus {
     }
 }
 
+.game-row {
+    width: 860px;
+    margin: 0 auto;
+}
+
+.game-row h3{
+    float: left;
+    width: 100%;
+    text-align: start;
+    margin-left: -15px;
+}
+
 .game-list {
     border: 2px solid rgba(74, 167, 119, 0.42);
     border-radius: 10px;
@@ -254,6 +266,9 @@ a:focus {
     float: left;
 }
 
-.game-list .game-title {
+.game-list .user-game-title {
     float: left;
+    font-size: 18px;
+    display: block;
+    text-decoration: none;
 }

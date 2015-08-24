@@ -23,8 +23,7 @@ class GameController < ApplicationController
 	end
 
 	def update
-	    @game = Game.find(params[:id])
-	 
+	    @game = Game.find(params[:id])	 
 	    if @game.update(games_params)
 	      redirect_to @game
 	    else
