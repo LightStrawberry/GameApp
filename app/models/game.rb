@@ -4,10 +4,8 @@ class Game < ActiveRecord::Base
 		:styles => { 
 			:title => "1170x300#",
 			:normal => "180x180#",
-	        :s120 => "120x120#",
+	        :small => "120x120#",
 	        :s48 => "48x48#",
-	        :s32 => "32x32#",
-	        :s16 => "16x16#"
 			},                  
         :url  => '/images/:id/:style/:basename.:extension',  
         :path => ':rails_root/public/images/:id/:style/:basename.:extension'  

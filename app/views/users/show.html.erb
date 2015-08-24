@@ -1,13 +1,27 @@
 <div class="container">
-<%= image_tag @user.avatar.url(:normal) %>
-<p>
-  <strong>name:</strong>
-  <%= @user.name %>
-</p>
-<p>
-  <strong>email:</strong>
-  <%= @user.email %>
-</p>
-<%= link_to 'back', root_path %>
-<%= link_to 'edit', edit_user_path %>
+
+<%= image_tag @user.avatar.url(:normal)%>
+<h1><%= @user.name %></h1>
+<p><%= @user.user_info %></p>
+
+<h3>他提交过的游戏:</h3>
+<div class="">
+	<div class="row">
+		<% @game.each do |game| %>
+	 	<div class="col-md-4 game-list" onclick="window.location='<%= game_path(game) %>';">
+	 		<%= image_tag game.image(:s48), class: "game-ico" %>
+	 		<a class="game-title"><%= game.name %></a><br></a>
+	 	</div>
+	 	<% end %>
+	</div>
+</div>
+
+<% if current_user && current_user == @user %>
+<p><strong>邮箱:</strong><%= @user.email %></p>
+<% end %>
+
+<% if current_user && current_user == @user %>
+<button type="button" class="btn btn-default"><%= link_to '返回', root_path %></button>
+<button type="button" class="btn btn-default"><%= link_to '编辑', edit_user_path %></button>
+<% end %>
 </div>

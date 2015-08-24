@@ -33,6 +33,7 @@ gem 'paperclip', '~> 4.3.0'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'acts-as-taggable-on'
 
 gem 'font-awesome-rails', '~> 4.3.0.0'
 

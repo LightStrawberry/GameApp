@@ -103,9 +103,13 @@ a:focus {
 }
 
 .game-title {
-	font-size: 30px;
+	font-size: 20px;
 	display: block;
 	text-decoration: none;
+    float: left;
+    position: relative;
+    top: 240px;
+    left: 20px;
 }
 
 .game-banner {
@@ -122,6 +126,8 @@ a:focus {
     height: 110%;
     margin-top: -70px;
     background-size:cover;
+    position: absolute;
+    top: 0;
 }
 
 .intro-body {
@@ -237,4 +243,17 @@ a:focus {
         -moz-transform: scale(1);
         transform: scale(1);
     }
+}
+
+.game-list {
+    border: 2px solid rgba(74, 167, 119, 0.42);
+    border-radius: 10px;
+}
+
+.game-list .game-ico {
+    float: left;
+}
+
+.game-list .game-title {
+    float: left;
 }

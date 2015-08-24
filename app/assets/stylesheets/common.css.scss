@@ -102,12 +102,15 @@ form {
     background-color: #1F2234;
     float: left;
     height: auto;
+    position: relative;
+    top: 100%;
+    padding-top: 50px;
 }
 
 .reply {
+  margin: 40px 0 20px 0;
   position: relative;
   overflow: hidden;
-  margin-bottom: 30px;
   width: 100%;
     .user-name {
       font-size: 18px;
@@ -145,10 +148,14 @@ form {
     position: relative;
     overflow: visible;
     text-align: center;
+    width: 90px;
     .image-circle {
       width: 50px;
       border-radius: 50%;
     }
+  }
+  .content {
+    text-align: left;
   }
 }
 

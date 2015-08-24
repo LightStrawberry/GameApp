@@ -1,12 +1,12 @@
 <div class="reply clearfix">
   <div class="user-info">
     <div class="user-avatar">
-      <%=link_to '#' do %>
-      <%= image_tag c.user.avatar.url(:small), class: 'image-circle' %>
+      <%=link_to user_path(c.user) do %>
+        <%= image_tag c.user.avatar.url(:small), class: 'image-circle' %>
       <% end %>
     </div>
     <div class="user-name">
-      <span><%=link_to c.user.name, "#" %></span>
+      <span><%=link_to c.user.name, user_path(c.user) %></span>
     </div>
     <div class="user-time">
       <span><%= time_ago_in_words c.created_at %>前</span>

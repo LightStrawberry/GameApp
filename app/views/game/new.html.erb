@@ -1,23 +1,21 @@
 <div class="container">
-  <h1>New Game</h1>
+  <h1>提交游戏</h1>
   <%= form_for (Game.new(user_id: current_user.id)), url: {action: "create"}, html: {class: "nifty_form"} do |g| %>
     <p>
-      <%= g.label :name %><br>
+      <%= g.label :name, "游戏名" %><br>
       <%= g.text_field :name %>
     </p>
-
+    <%= g.label :name, "图片" %><br>
     <%= g.file_field :image %>
-
     <p>
-      <%= g.label :platform %><br>
+      <%= g.label :platform, "发行平台"%><br>
       <%= g.text_field :platform %>
     </p>
     <%= g.hidden_field :user_id %>
     <p>
-      <%= g.label :game_info %><br>
+      <%= g.label :game_info, "游戏简介" %><br>
       <%= g.text_area :game_info %>
     </p>
-   
     <p>
       <%= g.submit "提交" %>
     </p>
