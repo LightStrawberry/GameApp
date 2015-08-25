@@ -13,32 +13,45 @@
 		<a class="game-title"><i class="fa fa-eject"></i>{{name}}</a>
 	</div>
 	</script>
+</div>
 	<script>
-	$(window).scroll(function () {
-		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-		makeTpl(pageNum);
-    	}
-	});
     //分页滚动刷新 start
+    var pageNum = 0;
     var $area = $('.area');
-    var pageNum = 1;
+
     function makeTpl(p){
         $.get('/list?page='+p,function(data){
             console.log(data)
             var html = '';
-            
+            var i = 0;
+            $.each(data,function(i){
             	var a = {
-            		id: data[0]['id'],
-            		name: data[0]['name'],
-            		image: data[0]['image']
+            		id: data[i]['id'],
+            		name: data[i]['name'],
+            		image: data[i]['image']
             	};
-			html += template('list', a);
+            	i++;
+				html += template('list', a);
+			})
+			pageNum++;
 			$area.append(html)
-            pageNum++;
+			console.log(pageNum)
         })
     }
-    makeTpl(pageNum);
-    //分页滚动刷新 end
+    $main.on('scroll',function(){
+        var $this = $(this);
+        clearTimeout(go)
+        go =null;
+        go =setTimeout(function(){
+            var docH = $(document).height();
+            var srollH = $main.scrollTop();
+            var areaH = $('.area').height();
 
+            if(srollH + docH + 300 > areaH){ //提前300PX滚动加载
+                makeTpl(pageNum);
+            }
+        },300)
+    })
+    //分页滚动刷新 end
 	</script>
-</div>
+	<script>makeTpl(1)</script>
