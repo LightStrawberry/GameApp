@@ -9,17 +9,26 @@
 	<div class="row area">
 	</div>
 	<script id="list" type="text/html">
-	<div class="game-info" onclick="window.open('{{id}}', '_blank');" style="background-image: url({{image}});">
+	<div class="game-info" onclick="window.open('game/{{id}}', '_blank');" style="background-image: url({{image}});">
 		<a class="game-title"><i class="fa fa-eject"></i>{{name}}</a>
 	</div>
 	</script>
+	<div class="loader-inner pacman">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script></script>
 </div>
 	<script>
     //分页滚动刷新 start
-    var pageNum = 0;
+    var $pacman = $('.pacman');
+    var pageNum = 1;
     var $area = $('.area');
-
     function makeTpl(p){
+    	$pacman.show()
         $.get('/list?page='+p,function(data){
             console.log(data)
             var html = '';
@@ -35,23 +44,17 @@
 			})
 			pageNum++;
 			$area.append(html)
+			$pacman.hide()
 			console.log(pageNum)
         })
     }
-    $main.on('scroll',function(){
-        var $this = $(this);
-        clearTimeout(go)
-        go =null;
-        go =setTimeout(function(){
-            var docH = $(document).height();
-            var srollH = $main.scrollTop();
-            var areaH = $('.area').height();
-
-            if(srollH + docH + 300 > areaH){ //提前300PX滚动加载
-                makeTpl(pageNum);
-            }
-        },300)
-    })
+    makeTpl(pageNum);
     //分页滚动刷新 end
+
+    //鼠标滑动调用
+    $(window).scroll(function () {
+		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+		makeTpl(pageNum)
+       }
+   });
 	</script>
-	<script>makeTpl(1)</script>

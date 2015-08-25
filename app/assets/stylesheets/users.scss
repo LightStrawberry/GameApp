@@ -1,3 +1,27 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pacman{
+    position: absolute;
+    left:50%;
+    margin-left: -25px;
+    z-index: 1000;
+    -moz-transform:scale(0.3,0.3);
+    -webkit-transform:scale(0.3,0.3);
+    -o-transform:scale(0.3,0.3);
+    transform:scale(0.3,0.3);
+    opacity:.5;
+}
+.transition_2{
+    transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+}
+.transition_10{
+    transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+}
