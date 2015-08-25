@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container main">
 	<h1>魔法之风 沉睡的人</h1>
 	<% if current_user %>
 	<div class="circle-button" onclick="window.location='<%= new_game_path %>';">
@@ -6,11 +6,39 @@
 	</div>
 	<% end %>
 
-	<div class="row">
-	  <% @games.each do |game| %>
-		<div class="game-info" onclick="window.open('<%= game_path(game) %>', '_blank');" style="background-image: url(<%= game.image(:title) %>);">
-			<a class="game-title"><i class="fa fa-eject"></i><%= game.name %></a>
-		</div>
-	  <% end %>
+	<div class="row area">
 	</div>
+	<script id="list" type="text/html">
+	<div class="game-info" onclick="window.open('{{id}}', '_blank');" style="background-image: url({{image}});">
+		<a class="game-title"><i class="fa fa-eject"></i>{{name}}</a>
+	</div>
+	</script>
+	<script>
+	$(window).scroll(function () {
+		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+		makeTpl(pageNum);
+    	}
+	});
+    //分页滚动刷新 start
+    var $area = $('.area');
+    var pageNum = 1;
+    function makeTpl(p){
+        $.get('/list?page='+p,function(data){
+            console.log(data)
+            var html = '';
+            
+            	var a = {
+            		id: data[0]['id'],
+            		name: data[0]['name'],
+            		image: data[0]['image']
+            	};
+			html += template('list', a);
+			$area.append(html)
+            pageNum++;
+        })
+    }
+    makeTpl(pageNum);
+    //分页滚动刷新 end
+
+	</script>
 </div>

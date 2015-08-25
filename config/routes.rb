@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   get "admin_user" => "admin#user", :as => "admin_user"
   get "admin_game" => "admin#game", :as => "admin_game"
-
+  get "list" => "game#list"
 
 
   # Example of regular route:

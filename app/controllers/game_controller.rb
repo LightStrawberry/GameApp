@@ -1,6 +1,12 @@
 class GameController < ApplicationController
 	def index
 		@games = Game.all
+		@games = Game.paginate(:page => params[:page], :per_page => 4)
+	end
+
+	def list
+		@games = Game.paginate(:page => params[:page], :per_page => 4)
+		render json: @games
 	end
 
 	def new

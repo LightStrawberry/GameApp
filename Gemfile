@@ -35,6 +35,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'acts-as-taggable-on'
 
+gem "will_paginate"
+
 gem 'font-awesome-rails', '~> 4.3.0.0'
 
 # Use ActiveModel has_secure_password
