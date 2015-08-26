@@ -9,6 +9,9 @@ class GameController < ApplicationController
 		render json: @games
 	end
 
+	def about
+	end
+
 	def new
 		@game = Game.new
 	end
