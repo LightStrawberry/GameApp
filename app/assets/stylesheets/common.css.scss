@@ -129,6 +129,21 @@ form {
 
 .reply {
   margin: 40px 0 20px 0;
+  .highlight {
+    margin-top: 15px;
+    background: #2D3037;
+    padding: 5px 40px;
+    margin-left: -40px;
+    margin-right: -40px;
+    pre {
+      margin-top: 9px;
+    }
+  }
+  textarea {
+    border: none;
+    height: 230px;
+    margin-top: -20px;
+  }
   position: relative;
   overflow: hidden;
   width: 100%;

@@ -37,6 +37,10 @@ gem 'acts-as-taggable-on'
 
 gem "will_paginate"
 
+gem 'redcarpet'
+
+gem 'pygments.rb'
+
 gem 'font-awesome-rails', '~> 4.3.0.0'
 
 # Use ActiveModel has_secure_password
